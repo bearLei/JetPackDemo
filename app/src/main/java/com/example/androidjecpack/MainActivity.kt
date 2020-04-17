@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.*
 import com.example.androidjecpack.java.mvp.MvpActivity
+import com.example.androidjecpack.livedata.LiveDataActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         mvp.setOnClickListener {
             startActivity(Intent(this, MvpActivity::class.java))
+        }
+        livedata.setOnClickListener {
+            startActivity(Intent(this,LiveDataActivity::class.java))
         }
         lifecycle.addObserver(MyObserver())
     }

@@ -6,11 +6,14 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidjecpack.R;
-import com.example.androidjecpack.java.WeatherResponse;
+import com.example.androidjecpack.java.database.WeatherBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +30,7 @@ public class MvpActivity extends AppCompatActivity implements WeatherMvpView {
     private RecyclerView mRecyclerView;
     private Button mGetDataButton;
     private WeatherAdapter mAdapter;
-    private ArrayList<WeatherResponse.WeatherBean> mData;
+    private ArrayList<WeatherBean> mData;
     private WeatherPresenter mPresenter;
 
     @Override
@@ -100,9 +103,22 @@ public class MvpActivity extends AppCompatActivity implements WeatherMvpView {
     }
 
     @Override
-    public void showData(List<WeatherResponse.WeatherBean> data) {
+    public void showData(List<WeatherBean> data) {
         mData.clear();
         mData.addAll(data);
         mAdapter.notifyDataSetChanged();
     }
+
+    private void useLiveData(){
+        MutableLiveData<String> liveData = new MutableLiveData<>();
+        liveData.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+
+            }
+        });
+
+        liveData.setValue("修改值");
+    }
+
 }

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidjecpack.R;
 import com.example.androidjecpack.java.WeatherResponse;
+import com.example.androidjecpack.java.database.WeatherBean;
 
 import java.util.ArrayList;
 
@@ -24,9 +25,9 @@ import java.util.ArrayList;
 public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherViewModel>{
 
     private Context mContext;
-    private ArrayList<WeatherResponse.WeatherBean> mData;
+    private ArrayList<WeatherBean> mData;
 
-    public WeatherAdapter(Context mContext, ArrayList<WeatherResponse.WeatherBean> mData) {
+    public WeatherAdapter(Context mContext, ArrayList<WeatherBean> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -61,7 +62,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
             mProvinceName = itemView.findViewById(R.id.province_name);
         }
 
-        public void setData(WeatherResponse.WeatherBean weatherBean,int position){
+        public void setData(WeatherBean weatherBean,int position){
             if (null == weatherBean){
                 return;
             }

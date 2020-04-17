@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
 
@@ -13,5 +14,11 @@
         android:layout_height="50dp"
         android:text="Mvp架构"
         />
-
+    <Button
+        android:id="@+id/livedata"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="LiveData实践"
+        android:layout_marginTop="20dp"
+        />
 </LinearLayout>

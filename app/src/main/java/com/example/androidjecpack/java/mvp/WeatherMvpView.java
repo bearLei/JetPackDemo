@@ -1,6 +1,7 @@
 package com.example.androidjecpack.java.mvp;
 
 import com.example.androidjecpack.java.WeatherResponse;
+import com.example.androidjecpack.java.database.WeatherBean;
 import com.example.androidjecpack.java.mvp.base.IBaseView;
 
 import java.util.List;
@@ -17,5 +18,5 @@ public interface WeatherMvpView extends IBaseView {
     void action01();
     void action02();
 
-    void showData(List<WeatherResponse.WeatherBean> data);
+    void showData(List<WeatherBean> data);
 }

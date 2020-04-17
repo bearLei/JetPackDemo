@@ -1,5 +1,7 @@
 package com.example.androidjecpack.java;
 
+import com.example.androidjecpack.java.database.WeatherBean;
+
 import java.util.List;
 
 /**
@@ -47,32 +49,4 @@ public class WeatherResponse {
         this.result = result;
     }
 
-    public class WeatherBean{
-        private String id;
-        private String province;
-
-        public WeatherBean() {
-        }
-
-        public WeatherBean(String id, String province) {
-            this.id = id;
-            this.province = province;
-        }
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getProvince() {
-            return province;
-        }
-
-        public void setProvince(String province) {
-            this.province = province;
-        }
-    }
 }
