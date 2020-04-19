@@ -22,3 +22,22 @@
 
 ### ViewModel是如何在屏幕旋转前后为页面存储数据？
 
+![说明 ViewModel 随着 Activity 状态的改变而经历的生命周期。](https://developer.android.google.cn/images/topic/libraries/architecture/viewmodel-lifecycle.png)
+
+以上是官方定义的ViewModel的生命周期
+
+思路1：数据存储的地方具有生命周期，且生命周期处于onCreate和最后finish之间
+
+思路2：建立一个数据管理类跟Activity实例对象绑定能否达成目的？
+
+源码思路
+
+1：在Activity内建立一个无界面的Fragment（HoldFragment），并设置为setRetainInstance(true),保证Activity重建时Fragment不会被销毁
+
+2:让holdFragment内持有1个Map,存储所有的ViewModel。
+
+3:当Activity finish时，清除holdFragment内全部的ViweModel
+
+### ViewModel是如何在Fragment之间传递数据的
+
+ViewModel也是有生命周期的,即OnCreate到最后的finish,而在创建ViewModel的时候就需要传入一个上下文对象，ViewModel在改上下文对象的域内可以做到局部单例
