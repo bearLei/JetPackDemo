@@ -79,3 +79,21 @@ View观察到数据发生变化--->UI响应
 ### 小结
 
 无论是MVP开发模式还是MVVM的开发模式，都没有绝对的优劣。只有合适或者不合适。官方也建议在复杂的页面也可引入presenter来处理数据。无论是后面使用哪种开发方式，这个思想都是可以借鉴的：**数据驱动视图**。
+
+附：
+
+![image-20200420105513407](C:\Users\ubt\AppData\Roaming\Typora\typora-user-images\image-20200420105513407.png)
+
+
+
+Repository
+
+![image-20200420105708714](C:\Users\ubt\AppData\Roaming\Typora\typora-user-images\image-20200420105708714.png)
+
+
+
+BaseViewModel
+
+![image-20200420105756405](C:\Users\ubt\AppData\Roaming\Typora\typora-user-images\image-20200420105756405.png)
+
+![image-20200420105834045](C:\Users\ubt\AppData\Roaming\Typora\typora-user-images\image-20200420105834045.png)

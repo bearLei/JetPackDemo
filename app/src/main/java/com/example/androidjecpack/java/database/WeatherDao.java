@@ -34,7 +34,6 @@ public interface WeatherDao {
     @Query("SELECT * FROM Weather_table")
     public List<WeatherBean> getAllWeather();
 
-
     //rxjava
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public Maybe<Integer> insertRxWeather(WeatherBean weatherBean);

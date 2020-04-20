@@ -1,4 +1,4 @@
-package com.example.androidjecpack.base
+package com.example.androidjecpack.mvvm.base
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -22,7 +22,7 @@ import java.lang.Exception
  * 4:提供错误的统一处理
  * version: 1.0
  */
-abstract class BaseViewModel<T> : ViewModel() {
+abstract class BaseViewModel : ViewModel() {
 
 
     private val error by lazy {
@@ -32,7 +32,7 @@ abstract class BaseViewModel<T> : ViewModel() {
     private val finally by lazy {
         MutableLiveData<Int>()
     }
-    abstract val liveData: LiveData<T>
+//    abstract val liveData: LiveData<T>
 
 
     /**

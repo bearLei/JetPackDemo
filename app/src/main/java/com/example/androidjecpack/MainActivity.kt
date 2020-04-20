@@ -7,12 +7,14 @@ import androidx.activity.viewModels
 import androidx.lifecycle.*
 import com.example.androidjecpack.java.mvp.MvpActivity
 import com.example.androidjecpack.livedata.LiveDataActivity
+import com.example.androidjecpack.mvvm.InjectorUtil
+import com.example.androidjecpack.mvvm.TestViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val model: MyViewModel by viewModels {
-        MyProviders()
+    private val model: TestViewModel by viewModels {
+        InjectorUtil.getTestFactory()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,9 +29,4 @@ class MainActivity : AppCompatActivity() {
         lifecycle.addObserver(MyObserver())
     }
 
-    class MyProviders : ViewModelProvider.NewInstanceFactory() {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return MyViewModel() as T
-        }
-    }
 }
